@@ -1,0 +1,720 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ayesha's Salon - Best Hair Salon Near You | Lahore</title>
+    <meta name="description" content="Ayesha's Salon - The best beauty salon in Lahore since 15 years. Haircut, styling, coloring, keratin treatment, makeup & more. Book your appointment today!">
+    <meta name="keywords" content="hair salon near me, best salon nearby, beauty salon Lahore, haircut, keratin treatment, makeup, Garden Town salon">
+    <meta name="author" content="Ayesha's Salon">
+    <meta property="og:title" content="Ayesha's Salon - Best Hair Salon in Lahore">
+    <meta property="og:description" content="Premium beauty salon with 15 years of experience. Book now!">
+    <meta property="og:type" content="website">
+    <script src="https://cdn.tailwindcss.com">
+    </script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        gold: '#C9A84C',
+                        'gold-light': '#D4AF37',
+                        'gold-dark': '#A68A35',
+                        'dark': '#1A1A1A',
+                        'dark-secondary': '#2D2D2D',
+                        'cream': '#F8F5F0',
+                    },
+                    fontFamily: {
+                        serif: ['Georgia', 'Times New Roman', 'serif'],
+                        sans: ['Inter', 'system-ui', 'sans-serif'],
+                    },
+                }
+            }
+        }
+    </script>
+    <style>
+        :root {
+            --gold: #C9A84C;
+            --gold-light: #D4AF37;
+            --gold-dark: #A68A35;
+            --dark: #1A1A1A;
+            --dark-secondary: #2D2D2D;
+            --cream: #F8F5F0;
+            --white: #FFFFFF;
+            --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        * {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Inter', system-ui, sans-serif;
+            background-color: var(--white);
+            color: var(--dark);
+            overflow-x: hidden;
+        }
+
+        ::-webkit-scrollbar { width: 6px; }
+        ::-webkit-scrollbar-track { background: #f1f1f1; }
+        ::-webkit-scrollbar-thumb { background: var(--gold); border-radius: 3px; }
+
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(40px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        @keyframes pulse-gold {
+            0%, 100% { box-shadow: 0 0 0 0 rgba(201, 168, 76, 0.4); }
+            50% { box-shadow: 0 0 0 20px rgba(201, 168, 76, 0); }
+        }
+        @keyframes shimmer {
+            0% { background-position: -200% 0; }
+            100% { background-position: 200% 0; }
+        }
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+
+        .animate-fade-in-up { animation: fadeInUp 0.7s ease forwards; }
+        .animate-fade-in { animation: fadeIn 0.8s ease forwards; }
+        .animate-float { animation: float 3s ease-in-out infinite; }
+        .animate-pulse-gold { animation: pulse-gold 2s infinite; }
+        .stagger-1 { animation-delay: 0.1s; }
+        .stagger-2 { animation-delay: 0.2s; }
+        .stagger-3 { animation-delay: 0.3s; }
+        .stagger-4 { animation-delay: 0.4s; }
+        .stagger-5 { animation-delay: 0.5s; }
+
+        .text-gold-gradient {
+            background: linear-gradient(135deg, #D4AF37 0%, #C9A84C 30%, #E8C96A 60%, #A68A35 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .btn-gold {
+            background: linear-gradient(135deg, #C9A84C 0%, #D4AF37 50%, #A68A35 100%);
+            color: #1A1A1A;
+            font-weight: 600;
+            border: none;
+            padding: 14px 32px;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: var(--transition);
+            letter-spacing: 0.5px;
+            position: relative;
+            overflow: hidden;
+            text-transform: uppercase;
+            font-size: 0.9rem;
+            box-shadow: 0 4px 20px rgba(201, 168, 76, 0.35);
+        }
+        .btn-gold:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 30px rgba(201, 168, 76, 0.5);
+            background: linear-gradient(135deg, #D4AF37 0%, #E8C96A 50%, #C9A84C 100%);
+        }
+        .btn-gold::after {
+            content: '';
+            position: absolute;
+            top: -50%; left: -50%;
+            width: 200%; height: 200%;
+            background: linear-gradient(45deg, transparent 40%, rgba(255,255,255,0.3) 50%, transparent 60%);
+            animation: shimmer 3s infinite;
+        }
+
+        .btn-outline-gold {
+            background: transparent;
+            color: var(--gold);
+            font-weight: 600;
+            border: 2px solid var(--gold);
+            padding: 12px 30px;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: var(--transition);
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+            font-size: 0.9rem;
+        }
+        .btn-outline-gold:hover {
+            background: var(--gold);
+            color: #1A1A1A;
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(201, 168, 76, 0.4);
+        }
+
+        .service-card {
+            background: #fff;
+            border-radius: 20px;
+            padding: 30px 24px;
+            transition: var(--transition);
+            border: 1px solid transparent;
+            cursor: pointer;
+            box-shadow: 0 2px 15px rgba(0,0,0,0.05);
+        }
+        .service-card:hover {
+            transform: translateY(-8px);
+            border-color: var(--gold);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+        }
+        .service-icon {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #F8F5F0 0%, #f0eadb 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 16px;
+            transition: var(--transition);
+            overflow: hidden;
+        }
+        .service-card:hover .service-icon {
+            background: linear-gradient(135deg, #C9A84C 0%, #D4AF37 100%);
+            transform: scale(1.1);
+        }
+        .service-icon img {
+            width: 36px;
+            height: 36px;
+            object-fit: contain;
+        }
+
+        .testimonial-card {
+            background: #fff;
+            border-radius: 16px;
+            padding: 28px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.06);
+            transition: var(--transition);
+            border-left: 3px solid var(--gold);
+        }
+        .testimonial-card:hover {
+            box-shadow: 0 12px 35px rgba(0,0,0,0.12);
+            transform: translateY(-4px);
+        }
+
+        .mobile-nav {
+            position: fixed; top: 0; right: -100%;
+            width: 80%; max-width: 380px; height: 100vh;
+            background: #1A1A1A; z-index: 1000;
+            transition: right 0.4s cubic-bezier(0.4,0,0.2,1);
+            padding: 30px; display: flex; flex-direction: column;
+        }
+        .mobile-nav.active { right: 0; }
+        .mobile-overlay {
+            position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+            background: rgba(0,0,0,0.6); z-index: 999;
+            opacity: 0; pointer-events: none;
+            transition: opacity 0.4s ease;
+        }
+        .mobile-overlay.active { opacity: 1; pointer-events: auto; }
+
+        .chatbot-widget { position: fixed; bottom: 24px; right: 24px; z-index: 900; }
+        .chatbot-toggle {
+            width: 56px; height: 56px; border-radius: 50%;
+            background: linear-gradient(135deg, #C9A84C, #D4AF37);
+            color: #1A1A1A; border: none; cursor: pointer;
+            font-size: 24px; box-shadow: 0 6px 25px rgba(201,168,76,0.5);
+            transition: var(--transition); display: flex; align-items: center; justify-content: center;
+        }
+        .chatbot-toggle:hover { transform: scale(1.1); box-shadow: 0 10px 35px rgba(201,168,76,0.6); }
+        .chatbot-window {
+            position: absolute; bottom: 70px; right: 0;
+            width: 340px; height: 440px; background: #fff;
+            border-radius: 16px; box-shadow: 0 20px 50px rgba(0,0,0,0.2);
+            display: flex; flex-direction: column; overflow: hidden;
+            transform: scale(0); transform-origin: bottom right;
+            transition: transform 0.3s cubic-bezier(0.4,0,0.2,1);
+            border: 1px solid #eee;
+        }
+        .chatbot-window.open { transform: scale(1); }
+
+        .calendar-grid { display: grid; grid-template-columns: repeat(7, 1fr); gap: 4px; text-align: center; }
+        .calendar-day { padding: 10px 4px; border-radius: 10px; cursor: pointer; transition: var(--transition); font-size: 0.9rem; font-weight: 500; }
+        .calendar-day:hover:not(.disabled):not(.selected) { background: #f0eadb; }
+        .calendar-day.selected { background: var(--gold); color: #1A1A1A; font-weight: 700; }
+        .calendar-day.disabled { color: #ccc; cursor: not-allowed; pointer-events: none; }
+        .calendar-day.today { border: 2px solid var(--gold); font-weight: 700; }
+        .calendar-day-header { padding: 8px 4px; font-weight: 700; font-size: 0.8rem; color: var(--gold); text-transform: uppercase; }
+
+        .time-slot { padding: 10px 16px; border-radius: 25px; cursor: pointer; transition: var(--transition); border: 1.5px solid #ddd; font-size: 0.85rem; font-weight: 500; text-align: center; background: #fff; }
+        .time-slot:hover { border-color: var(--gold); background: #fdfaf3; }
+        .time-slot.selected { background: var(--gold); color: #1A1A1A; border-color: var(--gold); font-weight: 700; }
+
+        .ba-card {
+            position: relative;
+            border-radius: 16px;
+            overflow: hidden;
+            cursor: pointer;
+            transition: var(--transition);
+            aspect-ratio: 3/4;
+            background: #f5f5f5;
+        }
+        .ba-card img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.4s ease;
+        }
+        .ba-card:hover img { transform: scale(1.05); }
+        .ba-card:hover { box-shadow: 0 15px 40px rgba(0,0,0,0.15); }
+        .ba-label {
+            position: absolute;
+            bottom: 16px; left: 50%; transform: translateX(-50%);
+            background: rgba(0,0,0,0.75); color: #fff;
+            padding: 6px 20px; border-radius: 20px;
+            font-size: 0.8rem; font-weight: 600;
+            letter-spacing: 0.5px; backdrop-filter: blur(4px);
+            border: 1px solid rgba(255,255,255,0.2);
+        }
+        .ba-tag {
+            position: absolute;
+            top: 16px; left: 16px;
+            background: var(--gold); color: #1A1A1A;
+            padding: 4px 14px; border-radius: 12px;
+            font-size: 0.7rem; font-weight: 700; text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .section-title {
+            font-size: 2.2rem; font-weight: 700; text-align: center;
+            margin-bottom: 12px; letter-spacing: -0.5px;
+        }
+        .section-subtitle {
+            text-align: center; color: #6B7280; max-width: 600px;
+            margin: 0 auto 40px; font-size: 1.05rem; line-height: 1.6;
+        }
+        .gold-underline {
+            width: 50px; height: 3px; background: var(--gold);
+            margin: 0 auto 20px; border-radius: 2px;
+        }
+
+        @media (max-width: 480px) {
+            .chatbot-window { width: 300px; height: 400px; right: -10px; bottom: 65px; }
+            .chatbot-widget { bottom: 16px; right: 16px; }
+        }
+        @media (max-width: 768px) {
+            .section-title { font-size: 1.7rem; }
+            .section-subtitle { font-size: 0.95rem; padding: 0 16px; }
+        }
+    </style>
+</head>
+<body class="bg-white text-dark">
+
+    <!-- Navigation -->
+    <nav class="fixed top-0 left-0 w-full z-50 bg-white/95 backdrop-blur-md shadow-sm transition-all duration-300" id="navbar">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16 lg:h-20">
+                <a href="#home" class="flex items-center gap-2 no-underline">
+                    <span class="text-2xl font-bold text-dark tracking-tight">AYESHA'S</span>
+                    <span class="hidden sm:inline text-gold font-serif text-lg">Salon</span>
+                </a>
+                <div class="hidden lg:flex items-center gap-8">
+                    <a href="#home" class="text-sm font-medium text-dark hover:text-gold transition-colors no-underline">Home</a>
+                    <a href="#services" class="text-sm font-medium text-dark hover:text-gold transition-colors no-underline">Services</a>
+                    <a href="#booking" class="text-sm font-medium text-dark hover:text-gold transition-colors no-underline">Book Now</a>
+                    <a href="#about" class="text-sm font-medium text-dark hover:text-gold transition-colors no-underline">About</a>
+                    <a href="#contact" class="text-sm font-medium text-dark hover:text-gold transition-colors no-underline">Contact</a>
+                    <a href="#booking" class="btn-gold text-sm no-underline">Book Appointment</a>
+                </div>
+                <button class="lg:hidden text-dark p-2 z-[1001]" id="hamburger" aria-label="Menu">
+                    <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M3 6h18M3 12h18M3 18h18" stroke-linecap="round"/>
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <div class="mobile-overlay" id="mobileOverlay"></div>
+    <div class="mobile-nav" id="mobileNav">
+        <button class="absolute top-6 right-6 text-white text-2xl" id="closeMobileNav">&times;</button>
+        <div class="mt-16 flex flex-col gap-6">
+            <a href="#home" class="text-white text-lg font-medium no-underline hover:text-gold mobile-nav-link">Home</a>
+            <a href="#services" class="text-white text-lg font-medium no-underline hover:text-gold mobile-nav-link">Services</a>
+            <a href="#booking" class="text-white text-lg font-medium no-underline hover:text-gold mobile-nav-link">Book Now</a>
+            <a href="#about" class="text-white text-lg font-medium no-underline hover:text-gold mobile-nav-link">About</a>
+            <a href="#contact" class="text-white text-lg font-medium no-underline hover:text-gold mobile-nav-link">Contact</a>
+            <a href="#booking" class="btn-gold text-center no-underline mt-4">Book Appointment</a>
+        </div>
+    </div>
+
+    <!-- Hero Section -->
+    <section id="home" class="relative min-h-screen flex items-center justify-center bg-gradient-to-br from-dark via-dark-secondary to-dark pt-16 lg:pt-20 overflow-hidden">
+        <div class="absolute top-20 left-10 w-64 h-64 bg-gold/10 rounded-full blur-3xl"></div>
+        <div class="absolute bottom-20 right-10 w-80 h-80 bg-gold/5 rounded-full blur-3xl"></div>
+        <div class="absolute top-1/3 right-1/4 w-40 h-40 bg-gold/8 rounded-full blur-2xl animate-float"></div>
+        <div class="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 text-center py-16">
+            <span class="inline-block text-gold text-sm font-semibold tracking-widest uppercase mb-4 animate-fade-in">✦ Premium Beauty Salon ✦</span>
+            <h1 class="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-bold text-white mb-6 leading-tight tracking-tight animate-fade-in-up stagger-1">
+                Find the Best <br class="sm:hidden">Hair Salon <span class="text-gold-gradient">Near You</span>
+            </h1>
+            <p class="text-gray-300 text-lg sm:text-xl max-w-2xl mx-auto mb-8 animate-fade-in-up stagger-2 leading-relaxed">
+                15 years of excellence in beauty. Professional haircuts, styling, coloring & makeup in the heart of Lahore.
+            </p>
+            <div class="max-w-xl mx-auto mb-6 animate-fade-in-up stagger-3">
+                <div class="flex items-center bg-white rounded-full shadow-2xl overflow-hidden p-1.5">
+                    <span class="pl-4 text-gray-400"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35" stroke-linecap="round"/></svg></span>
+                    <input type="text" placeholder="Search services... (e.g., haircut, keratin)" class="flex-1 px-3 py-3 text-dark outline-none text-sm bg-transparent" id="heroSearch">
+                    <button class="bg-gold text-dark px-5 py-3 rounded-full font-semibold text-sm hover:bg-gold-light transition-all flex items-center gap-1.5 flex-shrink-0" id="detectLocationBtn" title="Detect my location">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="3"/><path d="M12 2v4M12 18v4M2 12h4M18 12h4"/></svg> Near Me
+                    </button>
+                </div>
+                <p class="text-gray-400 text-xs mt-2" id="locationStatus"></p>
+            </div>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center animate-fade-in-up stagger-4">
+                <a href="#booking" class="btn-gold text-center no-underline text-base">Book Appointment</a>
+                <a href="#services" class="btn-outline-gold text-center no-underline">Explore Services</a>
+            </div>
+            <div class="mt-10 flex flex-wrap items-center justify-center gap-6 text-gray-400 text-sm animate-fade-in stagger-5">
+                <span>⭐ 4.5 (211 reviews)</span><span>📍 Garden Town, Lahore</span><span>🕐 11 AM - 8 PM Daily</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Premium Services -->
+    <section class="py-20 lg:py-28 bg-cream" id="featured-services">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6">
+            <div class="gold-underline"></div>
+            <h2 class="section-title">Our Premium Services</h2>
+            <p class="section-subtitle">Experience luxury beauty treatments tailored to perfection</p>
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6 mt-8">
+                <div class="service-card text-center">
+                    <div class="service-icon mx-auto">
+                        <img src="https://iili.io/BiebwIS.png" alt="Haircut icon" loading="lazy">
+                    </div>
+                    <h3 class="font-semibold text-dark mb-2">Haircut</h3>
+                    <p class="text-gray-500 text-sm">Precision cuts & latest trends</p>
+                </div>
+                <div class="service-card text-center">
+                    <div class="service-icon mx-auto">
+                        <img src="https://iili.io/Biebhp2.png" alt="Styling icon" loading="lazy">
+                    </div>
+                    <h3 class="font-semibold text-dark mb-2">Styling</h3>
+                    <p class="text-gray-500 text-sm">Blowouts, curls & updos</p>
+                </div>
+                <div class="service-card text-center">
+                    <div class="service-icon mx-auto">
+                        <img src="https://iili.io/BiebNh7.png" alt="Coloring icon" loading="lazy">
+                    </div>
+                    <h3 class="font-semibold text-dark mb-2">Coloring</h3>
+                    <p class="text-gray-500 text-sm">Balayage, highlights & more</p>
+                </div>
+                <div class="service-card text-center">
+                    <div class="service-icon mx-auto">
+                        <img src="https://iili.io/BiebV2f.png" alt="Beard grooming icon" loading="lazy">
+                    </div>
+                    <h3 class="font-semibold text-dark mb-2">Beard Grooming</h3>
+                    <p class="text-gray-500 text-sm">Trim, shape & style</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Before/After Gallery -->
+    <section class="py-20 lg:py-28 bg-white">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6">
+            <div class="gold-underline"></div>
+            <h2 class="section-title">Stunning Transformations</h2>
+            <p class="section-subtitle">Real results by our expert stylists — see the difference</p>
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6 mt-8">
+                <div class="ba-card">
+                    <span class="ba-tag">Before</span>
+                    <img src="https://iili.io/Biebt4a.png" alt="Before hair styling" loading="lazy">
+                    <span class="ba-label">Natural texture</span>
+                </div>
+                <div class="ba-card">
+                    <span class="ba-tag">After</span>
+                    <img src="https://iili.io/Biebypp.png" alt="After hair styling" loading="lazy">
+                    <span class="ba-label">Soft glam waves</span>
+                </div>
+                <div class="ba-card">
+                    <span class="ba-tag">Before</span>
+                    <img src="https://iili.io/BiebmYv.png" alt="Before beard grooming" loading="lazy">
+                    <span class="ba-label">Untamed look</span>
+                </div>
+                <div class="ba-card">
+                    <span class="ba-tag">After</span>
+                    <img src="https://iili.io/BiemdQt.png" alt="After beard grooming" loading="lazy">
+                    <span class="ba-label">Sharp & polished</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="py-20 lg:py-28 bg-cream">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6">
+            <div class="gold-underline"></div>
+            <h2 class="section-title">What Our Clients Say</h2>
+            <p class="section-subtitle">211+ happy reviews and counting</p>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mt-8">
+                <div class="testimonial-card"><div class="flex items-center gap-1 mb-3 text-gold">★★★★★</div><p class="text-gray-600 text-sm leading-relaxed mb-4">"Highly recommended place! Visited the second time and had a wonderful experience. Extremely professional haircut with reasonable prices."</p><p class="font-semibold text-dark text-sm">Fatima Rehman</p><p class="text-gray-400 text-xs">2 months ago</p></div>
+                <div class="testimonial-card"><div class="flex items-center gap-1 mb-3 text-gold">★★★★★</div><p class="text-gray-600 text-sm leading-relaxed mb-4">"The haircut experience was absolutely amazing! Mam Goshi is very professional. I got exactly the same haircut I showed in the reference photo."</p><p class="font-semibold text-dark text-sm">Minahil Khan</p><p class="text-gray-400 text-xs">4 months ago</p></div>
+                <div class="testimonial-card"><div class="flex items-center gap-1 mb-3 text-gold">★★★★★</div><p class="text-gray-600 text-sm leading-relaxed mb-4">"Clean environment, skilled staff, very relaxing service. My hands, feet, and skin feel so refreshed. Definitely coming back!"</p><p class="font-semibold text-dark text-sm">Farhan Farid</p><p class="text-gray-400 text-xs">2 months ago</p></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services & Pricing -->
+    <section class="py-20 lg:py-28 bg-white" id="services">
+        <div class="max-w-5xl mx-auto px-4 sm:px-6">
+            <div class="gold-underline"></div>
+            <h2 class="section-title">Services & Pricing</h2>
+            <p class="section-subtitle">Transparent pricing for all our beauty services</p>
+            <div class="space-y-4 mt-8">
+                <div class="flex items-center justify-between bg-cream rounded-2xl p-5 hover:shadow-md transition-shadow border border-transparent hover:border-gold/30"><div class="flex items-center gap-4"><span class="text-3xl">💇</span><div><h3 class="font-semibold text-dark">Haircut</h3><p class="text-gray-500 text-sm">Precision cut & style · 45 min</p></div></div><span class="font-bold text-gold-dark text-lg">PKR 2,500</span></div>
+                <div class="flex items-center justify-between bg-cream rounded-2xl p-5 hover:shadow-md transition-shadow border border-transparent hover:border-gold/30"><div class="flex items-center gap-4"><span class="text-3xl">🎨</span><div><h3 class="font-semibold text-dark">Hair Color</h3><p class="text-gray-500 text-sm">Full color application · 90 min</p></div></div><span class="font-bold text-gold-dark text-lg">PKR 6,000</span></div>
+                <div class="flex items-center justify-between bg-cream rounded-2xl p-5 hover:shadow-md transition-shadow border border-transparent hover:border-gold/30"><div class="flex items-center gap-4"><span class="text-3xl">✨</span><div><h3 class="font-semibold text-dark">Keratin Treatment</h3><p class="text-gray-500 text-sm">Smooth & frizz-free · 120 min</p></div></div><span class="font-bold text-gold-dark text-lg">PKR 12,000</span></div>
+                <div class="flex items-center justify-between bg-cream rounded-2xl p-5 hover:shadow-md transition-shadow border border-transparent hover:border-gold/30"><div class="flex items-center gap-4"><span class="text-3xl">💆</span><div><h3 class="font-semibold text-dark">Gold Facial</h3><p class="text-gray-500 text-sm">Rejuvenating treatment · 60 min</p></div></div><span class="font-bold text-gold-dark text-lg">PKR 4,500</span></div>
+                <div class="flex items-center justify-between bg-cream rounded-2xl p-5 hover:shadow-md transition-shadow border border-transparent hover:border-gold/30"><div class="flex items-center gap-4"><span class="text-3xl">🧔</span><div><h3 class="font-semibold text-dark">Beard Trim</h3><p class="text-gray-500 text-sm">Precision grooming · 30 min</p></div></div><span class="font-bold text-gold-dark text-lg">PKR 1,500</span></div>
+                <div class="flex items-center justify-between bg-cream rounded-2xl p-5 hover:shadow-md transition-shadow border border-transparent hover:border-gold/30"><div class="flex items-center gap-4"><span class="text-3xl">💄</span><div><h3 class="font-semibold text-dark">Party Makeup</h3><p class="text-gray-500 text-sm">Full glam look · 75 min</p></div></div><span class="font-bold text-gold-dark text-lg">PKR 8,000</span></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Booking System -->
+    <section class="py-20 lg:py-28 bg-cream" id="booking">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6">
+            <div class="gold-underline"></div>
+            <h2 class="section-title">Book Your Appointment</h2>
+            <p class="section-subtitle">Select your service, date, and preferred stylist</p>
+            <div class="bg-white rounded-3xl shadow-xl p-6 sm:p-8 lg:p-10 mt-8">
+                <form id="bookingForm" class="space-y-6">
+                    <div><label class="block font-semibold text-dark mb-2">Select Service</label><select id="bookingService" class="w-full p-3.5 border border-gray-200 rounded-xl outline-none focus:border-gold transition-colors bg-cream text-dark" required><option value="">Choose a service...</option><option value="Haircut - PKR 2,500">Haircut - PKR 2,500 (45 min)</option><option value="Hair Color - PKR 6,000">Hair Color - PKR 6,000 (90 min)</option><option value="Keratin Treatment - PKR 12,000">Keratin Treatment - PKR 12,000 (120 min)</option><option value="Gold Facial - PKR 4,500">Gold Facial - PKR 4,500 (60 min)</option><option value="Beard Trim - PKR 1,500">Beard Trim - PKR 1,500 (30 min)</option><option value="Party Makeup - PKR 8,000">Party Makeup - PKR 8,000 (75 min)</option><option value="Mehndi Makeup - PKR 10,000">Mehndi Makeup - PKR 10,000 (90 min)</option><option value="Waxing - PKR 2,000">Waxing - PKR 2,000 (30 min)</option></select></div>
+                    <div><label class="block font-semibold text-dark mb-2">Preferred Stylist</label><select id="bookingStylist" class="w-full p-3.5 border border-gray-200 rounded-xl outline-none focus:border-gold transition-colors bg-cream text-dark" required><option value="">Choose a stylist...</option><option value="Goshi (Senior Stylist)">Goshi - Senior Stylist ⭐</option><option value="Adeela (Color Specialist)">Adeela - Color Specialist</option><option value="Zakia (Facial & Waxing)">Zakia - Facial & Waxing Expert</option><option value="Any Available">Any Available Stylist</option></select></div>
+                    <div><label class="block font-semibold text-dark mb-2">Select Date</label><div class="bg-cream rounded-xl p-4"><div class="flex items-center justify-between mb-4"><button type="button" id="prevMonth" class="text-gold hover:text-gold-dark transition-colors font-bold text-lg">&larr;</button><span class="font-semibold text-dark" id="calendarMonthYear"></span><button type="button" id="nextMonth" class="text-gold hover:text-gold-dark transition-colors font-bold text-lg">&rarr;</button></div><div class="calendar-grid" id="calendarDaysHeader"></div><div class="calendar-grid" id="calendarGrid"></div><input type="hidden" id="selectedDate" required></div></div>
+                    <div><label class="block font-semibold text-dark mb-2">Select Time</label><div class="grid grid-cols-3 sm:grid-cols-5 gap-2" id="timeSlots"><p class="text-gray-400 text-sm col-span-full">Please select a date first</p></div><input type="hidden" id="selectedTime" required></div>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4"><div><label class="block font-semibold text-dark mb-2">Your Name</label><input type="text" id="bookingName" class="w-full p-3.5 border border-gray-200 rounded-xl outline-none focus:border-gold transition-colors bg-cream" placeholder="Enter your name" required></div><div><label class="block font-semibold text-dark mb-2">Phone Number</label><input type="tel" id="bookingPhone" class="w-full p-3.5 border border-gray-200 rounded-xl outline-none focus:border-gold transition-colors bg-cream" placeholder="+92 3XX XXXXXXX" required></div></div>
+                    <button type="submit" class="btn-gold w-full text-center">Confirm Booking</button>
+                </form>
+                <div id="bookingConfirmation" class="hidden mt-6 p-6 bg-green-50 border border-green-200 rounded-xl text-center"><span class="text-4xl">✅</span><h3 class="font-bold text-green-800 text-lg mt-2">Booking Confirmed!</h3><p class="text-green-700 text-sm mt-1" id="confirmationMessage"></p></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Us -->
+    <section class="py-20 lg:py-28 bg-white" id="about">
+        <div class="max-w-5xl mx-auto px-4 sm:px-6">
+            <div class="gold-underline"></div>
+            <h2 class="section-title">About Ayesha's Salon</h2>
+            <p class="section-subtitle">A legacy of beauty and excellence since 15 years</p>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-10 items-center mt-8">
+                <div>
+                    <p class="text-gray-600 leading-relaxed mb-4">Ayesha's Salon has been a trusted name in the beauty industry for <strong>15 years</strong>. Located in the heart of Garden Town, Lahore, we are dedicated to providing the finest beauty facilities with a focus on quality, hygiene, and customer satisfaction.</p>
+                    <p class="text-gray-600 leading-relaxed mb-4">Our team of experienced stylists stays updated with the latest trends and techniques to give you the look you deserve. From precision haircuts to flawless makeup, we make every visit special.</p>
+                    <p class="text-gray-600 leading-relaxed">⭐ <strong>211+ happy reviews</strong> | 🏆 <strong>15 years of trust</strong> | 💖 <strong>100% satisfaction</strong></p>
+                </div>
+                <div class="rounded-2xl overflow-hidden shadow-xl">
+                    <img src="https://iili.io/BiemR6u.png" alt="Salon interior" class="w-full h-auto object-cover" loading="lazy">
+                </div>
+            </div>
+            <div class="mt-16">
+                <h3 class="text-xl font-bold text-center mb-8">Meet Our Stylists</h3>
+                <div class="grid grid-cols-1 sm:grid-cols-3 gap-6">
+                    <div class="text-center p-6 bg-cream rounded-2xl hover:shadow-lg transition-shadow">
+                        <img src="https://iili.io/BiemVMF.png" alt="Goshi" class="w-24 h-24 rounded-full object-cover mx-auto mb-4 border-2 border-gold">
+                        <h4 class="font-semibold text-dark">Goshi</h4>
+                        <p class="text-gray-500 text-sm">Senior Stylist & Makeup Artist</p>
+                        <p class="text-gold-dark text-xs mt-1">⭐ Most Popular</p>
+                    </div>
+                    <div class="text-center p-6 bg-cream rounded-2xl hover:shadow-lg transition-shadow">
+                        <img src="https://iili.io/Biemw8v.png" alt="Adeela" class="w-24 h-24 rounded-full object-cover mx-auto mb-4 border-2 border-gold">
+                        <h4 class="font-semibold text-dark">Adeela</h4>
+                        <p class="text-gray-500 text-sm">Color Specialist</p>
+                        <p class="text-gold-dark text-xs mt-1">Balayage Expert</p>
+                    </div>
+                    <div class="text-center p-6 bg-cream rounded-2xl hover:shadow-lg transition-shadow">
+                        <img src="https://iili.io/BiemO9R.png" alt="Zakia" class="w-24 h-24 rounded-full object-cover mx-auto mb-4 border-2 border-gold">
+                        <h4 class="font-semibold text-dark">Zakia</h4>
+                        <p class="text-gray-500 text-sm">Facial & Waxing Expert</p>
+                        <p class="text-gold-dark text-xs mt-1">Skincare Pro</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact & Map (FIXED MAP) -->
+    <section class="py-20 lg:py-28 bg-dark text-white" id="contact">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6">
+            <div class="gold-underline"></div>
+            <h2 class="section-title text-white">Contact Us</h2>
+            <p class="section-subtitle text-gray-300">Visit us or book online — we're here for you</p>
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 mt-8">
+                <div class="space-y-6">
+                    <div class="flex items-start gap-4"><span class="text-2xl">📍</span><div><h3 class="font-semibold text-gold">Address</h3><p class="text-gray-300">Plot 80, Babar Block, Garden Town,<br>Lahore, 53000, Pakistan</p></div></div>
+                    <div class="flex items-start gap-4"><span class="text-2xl">📞</span><div><h3 class="font-semibold text-gold">Phone</h3><a href="tel:+923154254938" class="text-gray-300 hover:text-gold transition-colors no-underline">+92 315 4254938</a></div></div>
+                    <div class="flex items-start gap-4"><span class="text-2xl">🕐</span><div><h3 class="font-semibold text-gold">Business Hours</h3><p class="text-gray-300">Monday - Sunday<br>11:00 AM — 8:00 PM</p></div></div>
+                    <a href="https://wa.me/923154254938" target="_blank" rel="noopener" class="inline-flex items-center gap-2 bg-green-600 text-white px-6 py-3 rounded-full font-semibold hover:bg-green-700 transition-colors no-underline"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413z"/></svg>Chat on WhatsApp</a>
+                    <div class="flex gap-4 mt-4">
+                        <a href="https://www.instagram.com/ayeshassalonofficial_/" target="_blank" rel="noopener" class="text-gray-300 hover:text-gold transition-colors text-2xl no-underline" title="Instagram">📷</a>
+                        <a href="https://www.facebook.com/AyshasBeautySaloon/" target="_blank" rel="noopener" class="text-gray-300 hover:text-gold transition-colors text-2xl no-underline" title="Facebook">📘</a>
+                    </div>
+                </div>
+                <!-- CORRECTED MAP IFRAME -->
+                <div class="rounded-2xl overflow-hidden shadow-xl h-80 lg:h-full min-h-[320px]">
+                    <iframe 
+                        src="https://maps.google.com/maps?q=31.508,74.3445&z=16&output=embed"
+                        width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" 
+                        referrerpolicy="no-referrer-when-downgrade" title="Ayesha's Salon Location">
+                    </iframe>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-dark-secondary py-10 border-t border-gray-700">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 text-center">
+            <p class="text-white font-bold text-xl mb-2">AYESHA'S SALON</p>
+            <p class="text-gray-400 text-sm mb-4">15 years of beauty excellence in Lahore</p>
+            <div class="flex justify-center gap-6 mb-6">
+                <a href="https://www.instagram.com/ayeshassalonofficial_/" target="_blank" rel="noopener" class="text-gray-400 hover:text-gold transition-colors no-underline text-sm">Instagram</a>
+                <a href="https://www.facebook.com/AyshasBeautySaloon/" target="_blank" rel="noopener" class="text-gray-400 hover:text-gold transition-colors no-underline text-sm">Facebook</a>
+                <a href="#booking" class="text-gray-400 hover:text-gold transition-colors no-underline text-sm">Book Now</a>
+                <a href="#contact" class="text-gray-400 hover:text-gold transition-colors no-underline text-sm">Contact</a>
+            </div>
+            <p class="text-gray-500 text-xs">© 2024 Ayesha's Salon. All rights reserved. | Plot 80, Babar Block, Garden Town, Lahore</p>
+        </div>
+    </footer>
+
+    <!-- Chatbot widget -->
+    <div class="chatbot-widget" id="chatbotWidget">
+        <div class="chatbot-window" id="chatbotWindow">
+            <div class="bg-dark text-white p-4 flex items-center justify-between rounded-t-2xl">
+                <div class="flex items-center gap-2"><span class="text-xl">💬</span><span class="font-semibold text-sm">Ayesha's Salon Bot</span></div>
+                <button class="text-white hover:text-gold transition-colors text-lg" id="closeChatbot">&times;</button>
+            </div>
+            <div class="flex-1 overflow-y-auto p-4 space-y-3 bg-gray-50" id="chatMessages" style="max-height: 280px;">
+                <div class="bg-white p-3 rounded-xl text-sm text-gray-700 shadow-sm">👋 Hello! Welcome to Ayesha's Salon. How can I help you today?</div>
+                <div class="flex flex-wrap gap-2 mt-2">
+                    <button class="chat-quick-btn text-xs bg-gold/20 text-dark px-3 py-1.5 rounded-full hover:bg-gold/40 transition-colors font-medium" data-query="hours">🕐 Hours</button>
+                    <button class="chat-quick-btn text-xs bg-gold/20 text-dark px-3 py-1.5 rounded-full hover:bg-gold/40 transition-colors font-medium" data-query="price">💰 Pricing</button>
+                    <button class="chat-quick-btn text-xs bg-gold/20 text-dark px-3 py-1.5 rounded-full hover:bg-gold/40 transition-colors font-medium" data-query="location">📍 Location</button>
+                    <button class="chat-quick-btn text-xs bg-gold/20 text-dark px-3 py-1.5 rounded-full hover:bg-gold/40 transition-colors font-medium" data-query="book">📅 Book</button>
+                </div>
+            </div>
+            <div class="p-3 border-t border-gray-200 bg-white rounded-b-2xl flex gap-2">
+                <input type="text" id="chatInput" class="flex-1 p-2.5 border border-gray-200 rounded-xl outline-none focus:border-gold text-sm bg-gray-50" placeholder="Type a message...">
+                <button class="bg-gold text-dark px-4 rounded-xl font-semibold text-sm hover:bg-gold-light transition-colors" id="sendChat">Send</button>
+            </div>
+        </div>
+        <button class="chatbot-toggle animate-pulse-gold" id="chatbotToggle" aria-label="Open chat">💬</button>
+    </div>
+
+    <script>
+        (function() {
+            const hamburger = document.getElementById('hamburger');
+            const mobileNav = document.getElementById('mobileNav');
+            const mobileOverlay = document.getElementById('mobileOverlay');
+            const closeMobileNav = document.getElementById('closeMobileNav');
+            const mobileNavLinks = document.querySelectorAll('.mobile-nav-link');
+            const navbar = document.getElementById('navbar');
+
+            function openMobileNav() { mobileNav.classList.add('active'); mobileOverlay.classList.add('active'); document.body.style.overflow = 'hidden'; }
+            function closeMobileNavFn() { mobileNav.classList.remove('active'); mobileOverlay.classList.remove('active'); document.body.style.overflow = ''; }
+            hamburger.addEventListener('click', openMobileNav);
+            closeMobileNav.addEventListener('click', closeMobileNavFn);
+            mobileOverlay.addEventListener('click', closeMobileNavFn);
+            mobileNavLinks.forEach(link => link.addEventListener('click', closeMobileNavFn));
+            window.addEventListener('scroll', () => { if (window.scrollY > 50) navbar.classList.add('shadow-md'); else navbar.classList.remove('shadow-md'); });
+
+            const salonLat = 31.5080, salonLng = 74.3445;
+            const detectLocationBtn = document.getElementById('detectLocationBtn');
+            const locationStatus = document.getElementById('locationStatus');
+            const heroSearch = document.getElementById('heroSearch');
+            detectLocationBtn.addEventListener('click', () => {
+                if ('geolocation' in navigator) {
+                    locationStatus.textContent = '📍 Detecting your location...';
+                    navigator.geolocation.getCurrentPosition(
+                        (position) => {
+                            const userLat = position.coords.latitude, userLng = position.coords.longitude;
+                            const distance = calculateDistance(userLat, userLng, salonLat, salonLng);
+                            locationStatus.textContent = `📍 You're approximately ${distance.toFixed(1)} km away from Ayesha's Salon, Garden Town, Lahore`;
+                            heroSearch.placeholder = `Only ~${distance.toFixed(0)} km away — Book now!`;
+                        },
+                        (error) => { locationStatus.textContent = '⚠️ Unable to detect location. We\'re at Plot 80, Babar Block, Garden Town, Lahore.'; },
+                        { timeout: 10000 }
+                    );
+                } else { locationStatus.textContent = '⚠️ Geolocation not supported. We\'re at Plot 80, Babar Block, Garden Town, Lahore.'; }
+            });
+            function calculateDistance(lat1,lng1,lat2,lng2){const R=6371;const dLat=(lat2-lat1)*Math.PI/180;const dLng=(lng2-lng1)*Math.PI/180;const a=Math.sin(dLat/2)*Math.sin(dLat/2)+Math.cos(lat1*Math.PI/180)*Math.cos(lat2*Math.PI/180)*Math.sin(dLng/2)*Math.sin(dLng/2);const c=2*Math.atan2(Math.sqrt(a),Math.sqrt(1-a));return R*c;}
+            heroSearch.addEventListener('keydown', (e) => { if (e.key === 'Enter') document.getElementById('services').scrollIntoView({ behavior: 'smooth' }); });
+
+            let currentMonth = new Date().getMonth(), currentYear = new Date().getFullYear(), selectedDateValue = null;
+            const calendarMonthYear = document.getElementById('calendarMonthYear'), calendarDaysHeader = document.getElementById('calendarDaysHeader'), calendarGrid = document.getElementById('calendarGrid'), selectedDateInput = document.getElementById('selectedDate'), timeSlotsContainer = document.getElementById('timeSlots'), selectedTimeInput = document.getElementById('selectedTime');
+            const dayHeaders = ['Sun','Mon','Tue','Wed','Thu','Fri','Sat'];
+            function renderCalendarDaysHeader(){ calendarDaysHeader.innerHTML = dayHeaders.map(d=>`<div class="calendar-day-header">${d}</div>`).join(''); }
+            function renderCalendar(){
+                const monthNames = ['January','February','March','April','May','June','July','August','September','October','November','December'];
+                calendarMonthYear.textContent = `${monthNames[currentMonth]} ${currentYear}`;
+                const firstDay = new Date(currentYear, currentMonth, 1).getDay(), daysInMonth = new Date(currentYear, currentMonth+1, 0).getDate();
+                const today = new Date(), todayDate = today.getDate(), todayMonth = today.getMonth(), todayYear = today.getFullYear();
+                let html = '';
+                for(let i=0;i<firstDay;i++) html += '<div></div>';
+                for(let day=1;day<=daysInMonth;day++){
+                    const dateObj = new Date(currentYear, currentMonth, day);
+                    const isPast = dateObj < new Date(todayYear, todayMonth, todayDate);
+                    const isToday = (day===todayDate && currentMonth===todayMonth && currentYear===todayYear);
+                    const isSelected = selectedDateValue && selectedDateValue.getDate()===day && selectedDateValue.getMonth()===currentMonth && selectedDateValue.getFullYear()===currentYear;
+                    let cls = 'calendar-day';
+                    if(isPast) cls += ' disabled';
+                    if(isToday) cls += ' today';
+                    if(isSelected) cls += ' selected';
+                    html += `<div class="${cls}" data-day="${day}" data-month="${currentMonth}" data-year="${currentYear}">${day}</div>`;
+                }
+                calendarGrid.innerHTML = html;
+                calendarGrid.querySelectorAll('.calendar-day:not(.disabled)').forEach(el=>{
+                    el.addEventListener('click',()=>{
+                        selectedDateValue = new Date(parseInt(el.dataset.year), parseInt(el.dataset.month), parseInt(el.dataset.day));
+                        selectedDateInput.value = selectedDateValue.toISOString().split('T')[0];
+                        renderCalendar(); renderTimeSlots();
+                    });
+                });
+            }
+            function renderTimeSlots(){
+                if(!selectedDateValue){ timeSlotsContainer.innerHTML='<p class="text-gray-400 text-sm col-span-full">Please select a date first</p>'; return; }
+                const slots = [];
+                for(let h=11;h<=19;h++){ const hour=h>12?h-12:h; const ampm=h>=12?'PM':'AM'; slots.push(`${hour}:00 ${ampm}`); if(h<19) slots.push(`${hour}:30 ${ampm}`); }
+                const filtered = slots.filter(s=>!s.includes('7:30')&&!s.includes('8:00'));
+                timeSlotsContainer.innerHTML = filtered.map(s=>`<div class="time-slot" data-time="${s}">${s}</div>`).join('');
+                timeSlotsContainer.querySelectorAll('.time-slot').forEach(slot=>{ slot.addEventListener('click',()=>{ timeSlotsContainer.querySelectorAll('.time-slot').forEach(s=>s.classList.remove('selected')); slot.classList.add('selected'); selectedTimeInput.value=slot.dataset.time; }); });
+            }
+            document.getElementById('prevMonth').addEventListener('click',()=>{ currentMonth--; if(currentMonth<0){ currentMonth=11; currentYear--; } renderCalendar(); });
+            document.getElementById('nextMonth').addEventListener('click',()=>{ currentMonth++; if(currentMonth>11){ currentMonth=0; currentYear++; } renderCalendar(); });
+            renderCalendarDaysHeader(); renderCalendar(); renderTimeSlots();
+
+            const bookingForm = document.getElementById('bookingForm'), bookingConfirmation = document.getElementById('bookingConfirmation'), confirmationMessage = document.getElementById('confirmationMessage');
+            bookingForm.addEventListener('submit',(e)=>{
+                e.preventDefault();
+                const service = document.getElementById('bookingService').value, stylist = document.getElementById('bookingStylist').value, date = selectedDateInput.value, time = selectedTimeInput.value, name = document.getElementById('bookingName').value.trim(), phone = document.getElementById('bookingPhone').value.trim();
+                if(!service||!stylist||!date||!time||!name||!phone){ alert('Please fill all fields.'); return; }
+                const booking = {service,stylist,date,time,name,phone,id:Date.now()};
+                const bookings = JSON.parse(localStorage.getItem('ayeshaSalonBookings')||'[]');
+                bookings.push(booking); localStorage.setItem('ayeshaSalonBookings',JSON.stringify(bookings));
+                confirmationMessage.textContent = `Thank you, ${name}! Your ${service.split(' - ')[0]} appointment with ${stylist.split(' (')[0]} is confirmed for ${new Date(date).toLocaleDateString('en-US',{weekday:'long',year:'numeric',month:'long',day:'numeric'})} at ${time}. We'll contact you at ${phone}.`;
+                bookingConfirmation.classList.remove('hidden');
+                bookingForm.reset(); selectedDateValue=null; selectedDateInput.value=''; selectedTimeInput.value=''; renderCalendar(); renderTimeSlots();
+                bookingConfirmation.scrollIntoView({behavior:'smooth',block:'center'});
+                setTimeout(()=>{ bookingConfirmation.classList.add('hidden'); },10000);
+            });
+
+            const chatbotToggle = document.getElementById('chatbotToggle'), chatbotWindow = document.getElementById('chatbotWindow'), closeChatbot = document.getElementById('closeChatbot'), chatMessages = document.getElementById('chatMessages'), chatInput = document.getElementById('chatInput'), sendChat = document.getElementById('sendChat');
+            chatbotToggle.addEventListener('click',()=>{ chatbotWindow.classList.toggle('open'); });
+            closeChatbot.addEventListener('click',()=>{ chatbotWindow.classList.remove('open'); });
+            function addChatMessage(text,isUser=false){ const div=document.createElement('div'); div.className=isUser?'bg-gold/15 p-3 rounded-xl text-sm text-dark ml-8':'bg-white p-3 rounded-xl text-sm text-gray-700 shadow-sm'; div.textContent=text; chatMessages.appendChild(div); chatMessages.scrollTop=chatMessages.scrollHeight; }
+            function getBotResponse(query){ const q=query.toLowerCase().trim(); if(q.includes('hour')||q.includes('time')||q.includes('open')) return '🕐 We\'re open daily from 11:00 AM to 8:00 PM, including weekends!'; if(q.includes('price')||q.includes('cost')) return '💰 Haircut: PKR 2,500 | Hair Color: PKR 6,000 | Keratin: PKR 12,000 | Facial: PKR 4,500 | Beard Trim: PKR 1,500 | Party Makeup: PKR 8,000.'; if(q.includes('location')||q.includes('address')) return '📍 We\'re at Plot 80, Babar Block, Garden Town, Lahore, 53000.'; if(q.includes('book')) return '📅 You can book online using the form above or call +92 315 4254938.'; if(q.includes('hello')||q.includes('hi')) return '👋 Hello! Welcome to Ayesha\'s Salon.'; return 'Thanks for your message! For assistance, call +92 315 4254938 or use the booking form.'; }
+            sendChat.addEventListener('click',()=>{ const msg=chatInput.value.trim(); if(!msg) return; addChatMessage(msg,true); chatInput.value=''; setTimeout(()=>{ addChatMessage(getBotResponse(msg)); },500); });
+            chatInput.addEventListener('keydown',(e)=>{ if(e.key==='Enter') sendChat.click(); });
+            document.querySelectorAll('.chat-quick-btn').forEach(btn=>{ btn.addEventListener('click',()=>{ const q=btn.dataset.query; addChatMessage(btn.textContent.trim(),true); setTimeout(()=>{ addChatMessage(getBotResponse(q)); },400); }); });
+
+            const observer = new IntersectionObserver((entries)=>{ entries.forEach(e=>{ if(e.isIntersecting){ e.target.style.opacity='1'; e.target.style.transform='translateY(0)'; } }); },{threshold:0.15});
+            document.querySelectorAll('.service-card,.testimonial-card,.ba-card').forEach(el=>{ el.style.opacity='0'; el.style.transform='translateY(30px)'; el.style.transition='all 0.6s ease'; observer.observe(el); });
+            setTimeout(()=>{ document.querySelectorAll('.service-card,.testimonial-card,.ba-card').forEach(el=>{ const rect=el.getBoundingClientRect(); if(rect.top<window.innerHeight){ el.style.opacity='1'; el.style.transform='translateY(0)'; } }); },300);
+        })();
+    </script>
+</body>
+</html>
